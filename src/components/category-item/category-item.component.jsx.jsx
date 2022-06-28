@@ -1,4 +1,4 @@
-const GameCategories = ({ name }) => {
+const CategoryItem = ({ name }) => {
 	return (
 		<div className="category item">
 			<div className="content">
@@ -8,4 +8,4 @@ const GameCategories = ({ name }) => {
 	);
 };
 
-export default GameCategories;
+export default CategoryItem;

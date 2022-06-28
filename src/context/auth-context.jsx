@@ -1,6 +1,5 @@
 import { createContext, useState } from 'react';
 
-
 export const AuthContext = createContext({
 	currentUser: null,
 	setCurrentUser: () => null,
@@ -16,7 +15,12 @@ export const UserProvider = ({ children }) => {
 		setCurrentUser(user);
 		setIsLoggedIn(true);
 	};
-	const value = { currentUser, isLoggedIn, logUserIn  };
+
+	const logUserOut = () => {
+		setCurrentUser(null);
+		setIsLoggedIn(false);
+	};
+	const value = { currentUser, isLoggedIn, logUserIn, logUserOut };
 
 	return (
 		<AuthContext.Provider value={value}>{children}</AuthContext.Provider>

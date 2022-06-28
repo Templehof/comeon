@@ -1,5 +1,6 @@
-const GameItem = ({ game }) => {
-	const { name, description, icon } = game;
+
+const GameItem = ({ game, handleLaunchGame }) => {
+	const { name, description, icon, code } = game;
 
 	return (
 		<div className="game item">
@@ -12,7 +13,12 @@ const GameItem = ({ game }) => {
 				</div>
 				<div className="description">{description}</div>
 				<div className="extra">
-					<div className="play ui right floated secondary button inverted">
+					<div
+						className="play ui right floated secondary button inverted"
+						onClick={() => {
+							handleLaunchGame(code);
+						}}
+					>
 						Play
 						<i className="right chevron icon"></i>
 					</div>

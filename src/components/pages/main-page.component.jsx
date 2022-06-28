@@ -2,14 +2,12 @@ import { useContext } from 'react';
 import { AuthContext } from '../../context/auth-context';
 
 import LogInForm from '../log-in-form/login.component';
-import GamesScreen from './games-screen.component';
+import GamesLobby from './games-lobby.component';
 
 const MainPage = () => {
-	const { currentUser, isLoggedIn } = useContext(AuthContext);
+	const { isLoggedIn } = useContext(AuthContext);
 
-	return <>
-		{isLoggedIn ? <GamesScreen /> : <LogInForm />}
-	</>;
+	return <>{isLoggedIn ? <GamesLobby /> : <LogInForm />}</>;
 };
 
 export default MainPage;

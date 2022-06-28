@@ -30,12 +30,17 @@ const LogInForm = () => {
 				}),
 			});
 			const userData = await response.json();
-			console.log(userData);
-			logUserIn(userData.player);
-
-			resetFormFields();
+			if (response.statusText === 'OK') {
+				logUserIn({...userData.player, username});
+				resetFormFields();
+			} else {
+				resetFormFields();
+				throw new Error(
+					'Username or password doesnt exist, please try again'
+				);
+			}
 		} catch (error) {
-			console.log('error', error);
+			alert(error);
 		}
 	};
 
