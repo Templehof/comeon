@@ -28,9 +28,9 @@ const GamesLobby = () => {
 		return setFilteredGames(filteredGames);
 	};
 
-	const filterGamesByCategory = (e) => {
+	const filterGamesByCategory = (category) => {
 		const filteredGames = gamesList.filter((game) =>
-			game.name.toLowerCase().includes(e.target.value.toLowerCase())
+			game.categoryIds.includes(category)
 		);
 		return setFilteredGames(filteredGames);
 	};
@@ -55,7 +55,6 @@ const GamesLobby = () => {
 			setGamesList(gamesList);
 		};
 		getGames();
-		console.log(gamesList)
 	}, []);
 
 	return (
@@ -75,7 +74,10 @@ const GamesLobby = () => {
 								filteredGames ? filteredGames : gamesList
 							}
 						/>
-						<CategoriesList categories={categories} />
+						<CategoriesList
+							categories={categories}
+							handleFilter={filterGamesByCategory}
+						/>
 					</div>
 				</React.Fragment>
 			)}

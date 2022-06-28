@@ -1,6 +1,6 @@
 import CategoryItem from "../category-item/category-item.component.jsx";
 
-const CategoriesList = ({categories}) => {
+const CategoriesList = ({categories, handleFilter}) => {
 
     return (
         <div className="four wide column">
@@ -10,6 +10,7 @@ const CategoriesList = ({categories}) => {
                 <CategoryItem
                     key={category.id}
                     name={category.name}
+                    handleFilter={handleFilter}
                 />
             ))}
         </div>
