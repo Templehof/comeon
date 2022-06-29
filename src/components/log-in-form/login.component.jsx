@@ -1,4 +1,5 @@
 import { useState, useContext } from 'react';
+
 import { AuthContext } from '../../context/auth-context';
 
 const defaultFormFields = {
@@ -40,7 +41,7 @@ const LogInForm = () => {
 				);
 			}
 		} catch (error) {
-			alert(error);
+			alert(error.message);
 		}
 	};
 

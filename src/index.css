@@ -16,6 +16,28 @@ body {
 	float: right;
 }
 
+iframe {
+	position: absolute;
+	left: 50%;
+	top: 0;
+	transform: translate(-50%);
+	width: 85vw;
+	height: 90vh;
+}
+
+.game-screen-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.back-btn-container {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 999;
+}
+
 @media screen and (max-width: 978px) {
 	.ui.grid {
 		display: flex;
@@ -34,5 +56,10 @@ body {
 	}
 	.search {
 		float: left;
+	}
+
+	iframe {
+		width: 100vw;
+		height: 100vh;
 	}
 }
