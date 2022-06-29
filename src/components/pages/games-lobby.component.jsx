@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-import Header from '../header/header.component';
+import LobbyHeader from '../lobby-header/lobby-header.component';
 import GamesList from '../games-list/games-list.component';
 import GameScreen from './game-screen.component';
 import CategoriesList from '../categories-list/categories-list.component';
@@ -12,6 +12,7 @@ const GamesLobby = () => {
 	const [filteredGames, setFilteredGames] = useState(null);
 	const [categories, setCategories] = useState([]);
 
+	//Game launch/close functions
 	const handleLaunchGame = (game) => {
 		setGameName(game);
 		setIsGameLaunched(true);
@@ -21,6 +22,7 @@ const GamesLobby = () => {
 		setIsGameLaunched(false);
 	};
 
+	//Filter Functions
 	const filterGames = (e) => {
 		const filteredGames = gamesList.filter((game) =>
 			game.name.toLowerCase().includes(e.target.value.toLowerCase())
@@ -34,6 +36,8 @@ const GamesLobby = () => {
 		);
 		return setFilteredGames(filteredGames);
 	};
+
+	//Setting games and categories
 
 	useEffect(() => {
 		const getCategories = async () => {
@@ -66,7 +70,7 @@ const GamesLobby = () => {
 				/>
 			) : (
 				<React.Fragment>
-					<Header filter={filterGames} />
+					<LobbyHeader filter={filterGames} />
 					<div className="ui grid">
 						<GamesList
 							handleLaunchGame={handleLaunchGame}

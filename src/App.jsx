@@ -1,5 +1,4 @@
 import React from 'react';
-//import { Routes, Route } from 'react-router-dom';
 
 import MainPage from './components/pages/main-page.component';
 import Logo from './components/ui-elements/logo.component';

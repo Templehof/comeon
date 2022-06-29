@@ -31,7 +31,7 @@ const LogInForm = () => {
 			});
 			const userData = await response.json();
 			if (response.statusText === 'OK') {
-				logUserIn({...userData.player, username});
+				logUserIn({ ...userData.player, username });
 				resetFormFields();
 			} else {
 				resetFormFields();

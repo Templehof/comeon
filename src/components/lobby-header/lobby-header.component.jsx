@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 import { AuthContext } from '../../context/auth-context';
 
-const Header = ({filter}) => {
+const LobbyHeader = ({ filter }) => {
 	const { currentUser, logUserOut } = useContext(AuthContext);
 	const { avatar, event, name, username } = currentUser;
 
@@ -58,7 +58,13 @@ const Header = ({filter}) => {
 			</div>
 			<div className="four wide column">
 				<div className="search ui small icon input ">
-					<input type="text" placeholder="Search Game" onChange={(e)=>{filter(e)}} />
+					<input
+						type="text"
+						placeholder="Search Game"
+						onChange={(e) => {
+							filter(e);
+						}}
+					/>
 					<i className="search icon"></i>
 				</div>
 			</div>
@@ -66,4 +72,4 @@ const Header = ({filter}) => {
 	);
 };
 
-export default Header;
+export default LobbyHeader;

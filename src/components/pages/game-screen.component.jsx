@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 const GameScreen = ({ handleCloseGame, gameName }) => {
 	useEffect(() => {
 		window.comeon.game.launch(gameName);
-	}, []);
+	}, [gameName]);
 
 	return (
 		<div className="ingame">

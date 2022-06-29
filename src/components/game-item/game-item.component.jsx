@@ -1,4 +1,3 @@
-
 const GameItem = ({ game, handleLaunchGame }) => {
 	const { name, description, icon, code } = game;
 
