@@ -11,10 +11,6 @@ I added json-server as a dev dependency and added start script - "npm run start-
 
 3 Error handling. Some basic error handling is implemented in async functions using try-catch blocks. It could be further improved by creating custom error components that would wrap the async functions. Moreover, error-modal component could be added for a customised error message pop-up screen instead of using alert.
 
-
-### Issue
-I wasn't quite sure how to enable mobile layout of the game screen as it sees to be passed with the application data ? For now I just made the full screen mode in the desktop with the button to go back. Mobile view of the game screen isn't breaking anything but is not quite usable unless the screen is rotated.
-
 ### Other notes
 
 I tried to use minimum of libraries from the React ecosystem. Redux and reducers could be used, although I think it would be an overkill for this scale and the code would be a bit less readable. However, for a larger scale, with additional features Redux would be a good choice.

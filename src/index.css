@@ -31,10 +31,11 @@ iframe {
 	align-items: center;
 }
 
-.back-btn-container {
+.back-btn {
 	position: absolute;
-	top: 0;
-	left: 0;
+	top: 90vh;
+	left: 50%;
+	transform: translateX(-50%);
 	z-index: 999;
 }
 
